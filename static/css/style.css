@@ -1387,6 +1387,14 @@ ol.toc {
   break-inside: avoid-column;
   padding: 0;
   margin-bottom: 15px;
+  display: inline-table;
+  width: 49%;
+}
+@media screen and (max-width: 559px){
+  .archive-article {
+    display: block;
+    width: 100%;
+  }
 }
 .archive-article:before,
 .archive-article:after {
@@ -1405,9 +1413,14 @@ ol.toc {
 .archive-article.archive-type-summary .article-entry p {
   margin: 12px 0;
 }
+.archive-article .archive-article-header {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+}
 .archive-article .archive-article-content,
 .archive-article .archive-article-thumbnail {
-  display: table-cell;
+  display: inner-table;
   vertical-align: top;
 }
 @media screen and (max-width: 559px) {
@@ -1417,8 +1430,8 @@ ol.toc {
   }
 }
 .archive-article .archive-article-thumbnail {
-  width: 160px;
-  padding-right: 15px;
+  width: 100%;
+  padding-bottom: 15px;
 }
 @media screen and (max-width: 559px) {
   .archive-article .archive-article-thumbnail {
@@ -1451,7 +1464,7 @@ ol.toc {
 }
 .archive-article-title {
   display: block;
-  font-size: 1.6em;
+  font-size: 1.2em;
   line-height: 1.4em;
   margin-bottom: 12px;
 }
