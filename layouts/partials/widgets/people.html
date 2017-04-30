@@ -1,0 +1,24 @@
+{{ if .Site.Params.widgets.people }}
+{{ if isset .Site.Taxonomies "people" }}
+{{ if not (eq (len .Site.Taxonomies.people) 0) }}
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        {{ with .Site.Data.l10n.widgets.people.title }}{{.}}{{end}}
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            {{ range $name, $items := .Site.Taxonomies.people }}
+            <li class="category-list-item">
+                {{ $url := printf "%s/%s" "people" ($name | urlize | lower)}}
+                <a class="category-list-link" href="{{ $url | absURL }}">
+                    {{ $name }}
+                </a>
+                <span class="category-list-count">{{ len $items }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

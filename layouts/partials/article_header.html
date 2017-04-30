@@ -45,5 +45,18 @@
             </div>
             {{ end }}
         {{ end }}
+        {{ if isset .Params "people" }}
+            {{ $peopleLen := len .Params.people }}
+            {{ if gt $peopleLen 0 }}
+            <div class="article-category">
+                <i class="fa fa-user"></i>
+                {{ range $k, $v := .Params.people }}
+                {{ $url := printf "people/%s" (. | urlize | lower) }}
+                <a class="article-category-link" href="{{ $url | absURL }}">{{ . }}</a>
+                {{ if lt $k (sub $peopleLen 1) }}&middot;{{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        {{ end }}
     </div>
 </header>
