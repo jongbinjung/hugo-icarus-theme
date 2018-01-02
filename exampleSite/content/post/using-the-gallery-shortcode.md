@@ -15,11 +15,11 @@ This way you can easily include a gallery into your page. Copy the code below in
 
 
     {{</* gallery
-        "/banners/placeholder.png"
-        "/banners/placeholder.png"
-        "/banners/placeholder.png"
+        "/img/placeholder.png"
+        "/img/placeholder.png"
+        "/img/placeholder.png"
     */>}}
 
 <p></p>
 
-{{< gallery "/banners/placeholder.png" "/banners/placeholder.png" "/banners/placeholder.png" >}}
+{{< gallery "/img/placeholder.png" "/img/placeholder.png" "/img/placeholder.png" >}}
